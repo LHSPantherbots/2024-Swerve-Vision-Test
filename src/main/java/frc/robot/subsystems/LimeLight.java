@@ -47,6 +47,10 @@ public class LimeLight extends SubsystemBase {
         return table.getEntry("ta").getDouble(0);
     }
 
+    public double getTargetLatency() {
+        return table.getEntry("tl").getDouble(0);
+    }
+
     public Pose3d getBotPose3d() {
          var poseArrary = table.getEntry("botpose").getDoubleArray(new double[6]);
          botPose3d = new Pose3d(poseArrary[0], poseArrary[1], poseArrary[2], new Rotation3d(poseArrary[3], poseArrary[4], poseArrary[5]));
