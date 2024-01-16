@@ -3,6 +3,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Rotation3d;
@@ -29,6 +30,10 @@ public class LimeLight extends SubsystemBase {
         horizontalOffset = getHorizontalOffset();
         verticalOffset = getVerticalOffset();
         targetArea = getTargetArea();
+        SmartDashboard.putBoolean("LL Valid Target", validTargets);
+        SmartDashboard.putNumber("Vision Loc X", botPose3d.getX());
+        SmartDashboard.putNumber("Target Latancy", getTargetLatency());
+
     }
 
     public boolean isTargetValid() {
